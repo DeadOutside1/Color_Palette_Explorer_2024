@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+    <title>{% block title%}{%endblock%}</title>
+</head>
+<body>
+
+<div class="navbar">
+  <a href="#home">Coolors</a>
+    <div class="dropdown">
+        <button class="dropbtn">Tools
+        </button>
+    <div class="dropdown-content">
+        <a href="#"><img src="palette-icon.png" class="icon">Palette Generator</a>
+        <a href="#"><img src="explore-icon.png" class="icon">Explore Palettes</a>
+    </div>
+    </div>
+    <a href="#go-pro">Go Pro</a>
+    <a href="#sign-in" id="loginBtn" >Sign-in</a>
+    <a href="#sign-up">Sign up</a>
+
+    <div id="loginPopup" class="popup">
+        <span class="close" onclick="closePopup()">X</span>
+        <h2>Login</h2>
+        <form>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <button type="submit">Login</button>
+        </form>
+        <a href="#" class="signup-link" id="signupLink">Sign Up</a>
+    </div>
+    <div id="overlay" class="overlay"></div>
+</div>
+{% block body%}{%endblock%}
+
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
+</body>
+</html>
