@@ -13,6 +13,9 @@ def index():
 def about():
     return render_template("about.html")
 
+def justtest():
+    pass
+
 @app.route('/user/<string:name>/<int:id>')
 def user(name, id):
     return "User page" + name + "-" + str(id)
