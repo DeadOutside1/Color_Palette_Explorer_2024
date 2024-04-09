@@ -5,5 +5,108 @@ Main Page
 {% endblock %}
 
 {% block body %}
-<h1>Main Page opened</h1>
+<!-- color palette -->
+<div class="color-palette">
+        <div class="color">
+            <h2>hex</h2>
+            <div class="controls">
+                <button class="copy"><i class="fas fa-copy"></i></button>
+                <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                <button class="lock"><i class="fa fa-lock-open"></i></button>
+            </div>
+            <div class="sliders">
+                <button class="close-adjustments">X</button>
+                <span>Hue</span>
+                <input type="range" name="hue" class="hue-input" min="0" max="360" step="1" data-hue="0">
+                <span>Saturation</span>
+                <input type="range" name="saturation" class="saturation-input" min="0" max="1" step="0.01" data-sat="0">
+                <span>Lightness</span>
+                <input type="range" name="lightness" class="lightness-input" min="0" max="1" step="0.01" data-light="0">
+            </div>
+        </div>
+        <div class="color">
+                <h2>hex</h2>
+                <div class="controls">
+                    <button class="copy"><i class="fas fa-copy"></i></button>
+                    <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                    <button class="lock"><i class="fas fa-lock-open"></i></button>
+                </div>
+                <div class="sliders">
+                    <button class="close-adjustments">X</button>
+                    <span>Hue</span>
+                    <input type="range" name="hue" class="hue-input" min="0" max="360" step="1" data-hue="1">
+                    <span>Saturation</span>
+                    <input type="range" name="saturation" class="saturation-input" min="0" max="1" step="0.01" data-sat="1">
+                    <span>Lightness</span>
+                    <input type="range" name="lightness" class="lightness-input" min="0" max="1" step="0.01" data-light="1">
+                </div>
+        </div>
+        <div class="color">
+            <h2>hex</h2>
+            <div class="controls">
+                <button class="copy"><i class="fas fa-copy"></i></button>
+                <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                <button class="lock"><i class="fas fa-lock-open"></i></button>
+            </div>
+            <div class="sliders">
+                <button class="close-adjustments">X</button>
+                <span>Hue</span>
+                <input type="range" name="hue" class="hue-input" min="0" max="360" step="1" data-hue="2">
+                <span>Saturation</span>
+                <input type="range" name="saturation" class="saturation-input" min="0" max="1" step="0.01" data-sat="2">
+                <span>Lightness</span>
+                <input type="range" name="lightness" class="lightness-input" min="0" max="1" step="0.01" data-light="2">
+            </div>
+        </div>
+        <div class="color">
+            <h2>hex</h2>
+            <div class="controls">
+                <button class="copy"><i class="fas fa-copy"></i></button>
+                <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                <button class="lock"><i class="fas fa-lock-open"></i></button>
+            </div>
+            <div class="sliders">
+                <button class="close-adjustments">X</button>
+                <span>Hue</span>
+                <input type="range" name="hue" class="hue-input" min="0" max="360" step="1" data-hue="2">
+                <span>Saturation</span>
+                <input type="range" name="saturation" class="saturation-input" min="0" max="1" step="0.01" data-sat="2">
+                <span>Lightness</span>
+                <input type="range" name="lightness" class="lightness-input" min="0" max="1" step="0.01" data-light="2">
+            </div>
+        </div>
+        <div class="color">
+            <h2>hex</h2>
+            <div class="controls">
+                <button class="copy"><i class="fas fa-copy"></i></button>
+                <button class="adjust"><i class="fas fa-sliders-h"></i></button>
+                <button class="lock"><i class="fas fa-lock-open"></i></button>
+            </div>
+            <div class="sliders">
+                <button class="close-adjustments">X</button>
+                <span>Hue</span>
+                <input type="range" name="hue" class="hue-input" min="0" max="360" step="1" data-hue="2">
+                <span>Saturation</span>
+                <input type="range" name="saturation" class="saturation-input" min="0" max="1" step="0.01" data-sat="2">
+                <span>Lightness</span>
+                <input type="range" name="lightness" class="lightness-input" min="0" max="1" step="0.01" data-light="2">
+            </div>
+        </div>
+</div>
+<!-- control panel -->
+<div class="panel">
+    <div class="library-panel">
+        <button class="library"><i class="fas fa-book-open"></i></button>
+        <p>Library</p>
+    </div>
+    <div class="generate-panel">
+        <button class="generate"><i class="fas fa-sync"></i></button>
+        <p>Generate</p>
+    </div>
+    <div class="save-panel">
+        <button class="save"><i class="fas fa-save"></i></button>
+        <p>Save</p>
+    </div>
+</div>
+
 {% endblock %}
