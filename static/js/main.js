@@ -45,7 +45,7 @@ function randomColor() {
             return;
         }
         else colorArray.push(chroma(generatedHex).hex());
-        //console.log(color.children); -HTML collection color.childNode: nodelist w/ text and in between elements
+
 
         /*setting up color*/
         hexText.innerHTML = generatedHex;
@@ -66,5 +66,41 @@ function randomColor() {
 
     /*reset slider*/
     resetSlider();
+}
+
+/*colorize Sliders*/
+function colorizeSliders(color, hue, saturation, brightness) {
+    /*scale saturation*/
+    const noSat = color.set('hsl.s',0);
+    const fullSat = color.set('hsl.s',1);
+    const scaleSat = chroma.scale([noSat,color,fullSat]);
+
+    /*scale lightness*/
+    const midLight = color.set('hsl.l',0.5);
+    const scaleLight = chroma.scale(["black",midLight,"white"]);
+
+    /*update input color*/
+    saturation.style.backgroundImage = `linear-gradient(to right, ${scaleSat(0)}, ${scaleSat(0.5)}, ${scaleSat(1)})`;
+    brightness.style.backgroundImage = `linear-gradient(to right, ${scaleLight(0)}, ${scaleLight(0.5)}, ${scaleLight(1)})`;
+    hue.style.backgroundImage = `linear-gradient(to right, rgb(204,75,75),rgb(204,204,75),rgb(75,204,75),rgb(75,204,204),rgb(75,75,204),rgb(204,75,204),rgb(204,75,75))`;
+}
+
+/*update bg by slider*/
+function updateBackground(e) {
+    let index = e.target.getAttribute("data-hue") || e.target.getAttribute("data-sat") || e.target.getAttribute("data-light");
+    let slider = e.target.parentElement.querySelectorAll('input[type="range"]');
+    let hue = slider[0];
+    let saturation = slider[1];
+    let lightness = slider[2];
+
+    let color = colorArray[index];
+    let bgColor = chroma(color)
+        .set("hsl.h",hue.value)
+        .set("hsl.s",saturation.value)
+        .set("hsl.l",lightness.value);
+    colorDivs[index].style.backgroundColor = bgColor;
+
+    /*color to sliders*/
+    colorizeSliders(bgColor, hue, saturation, lightness)
 }
 
