@@ -75,7 +75,7 @@ body {
     visibility: visible;
     transform: translateY(0rem);
 }
-.navbar a:not(#header_logo):hover, .dropdown:hover .dropbtn {
+.navbar a:not(#header_logo, .signup-link):hover, .dropdown:hover .dropbtn {
     background-color: #555;
 }
 
@@ -125,11 +125,12 @@ body {
     cursor: pointer;
 }
 
-.signup-link {
+#signupLink {
     display: block !important;
     margin-top: 0.625rem !important;
     text-align: center !important;
     font-size: smaller !important;
+    color: blue;
 }
 
 /* Validation message */

@@ -45,7 +45,7 @@ function randomColor() {
             return;
         }
         else colorArray.push(chroma(generatedHex).hex());
-
+        //console.log(color.children); -HTML collection color.childNode: nodelist w/ text and in between elements
 
         /*setting up color*/
         hexText.innerHTML = generatedHex;
@@ -102,5 +102,49 @@ function updateBackground(e) {
 
     /*color to sliders*/
     colorizeSliders(bgColor, hue, saturation, lightness)
+}
+
+/*update UI*/
+function updateTextUI(index){
+    let activeDiv = colorDivs[index];
+    let color = chroma(activeDiv.style.backgroundColor);
+    let hexText = activeDiv.children[0];
+    let icons = activeDiv.querySelectorAll(".controls button");
+
+    hexText.innerText = color.hex();
+    /*check luminance for hexText*/
+    checkLuminence(color, hexText);
+    for(icon of icons) checkLuminence(color,icon);
+}
+
+/*open slider*/
+function toggleSlider(index) {
+    let slider = sliders[index];
+    slider.classList.toggle("open");
+}
+function closeSlider(index) {
+    let slider = sliders[index];
+    slider.classList.remove("open");
+}
+
+/*reset slider*/
+function resetSlider() {
+    sliderInputs.forEach((slider) => {
+        if(slider.name === "hue"){
+            let hueColor = colorArray[slider.getAttribute("data-hue")];
+            let hueValue = chroma(hueColor).hsl()[0];
+            slider.value = Math.floor(hueValue);
+        }
+        if(slider.name === "saturation"){
+            let satColor = colorArray[slider.getAttribute("data-sat")];
+            let satValue = chroma(satColor).hsl()[1];
+            slider.value = Math.floor(satValue*100)/100;
+        }
+        if(slider.name === "lightness"){
+            let lightColor = colorArray[slider.getAttribute("data-light")];
+            let brightValue = chroma(lightColor).hsl()[2];
+            slider.value = Math.floor(brightValue*100)/100;
+        }
+    })
 }
 
