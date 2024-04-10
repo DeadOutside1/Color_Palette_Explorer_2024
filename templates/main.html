@@ -5,7 +5,6 @@
     <meta name="viewport"
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <script src="{{ url_for('static', filename='js/login.js') }}"></script>
     <script src="{{ url_for('static', filename='js/save-library.js') }}" defer></script>
     <script src="{{ url_for('static', filename='js/main.js') }}" defer></script>
     <script
@@ -30,8 +29,8 @@
     <div class="dropdown">
         <button class="dropbtn">Tools</button>
     <div class="dropdown-content">
-        <a href="#"><img src="palette-icon.png" class="icon">Palette Generator</a>
-        <a href="#"><img src="explore-icon.png" class="icon">Explore Palettes</a>
+        <a href="#"><img src="" class="icon">Palette Generator</a>
+        <a href="#"><img src="" class="icon">Explore Palettes</a>
     </div>
     </div>
 
@@ -67,5 +66,6 @@
 
 </div>
 {% block body%}{%endblock%}
+<script src="{{ url_for('static', filename='js/login.js') }}"></script>
 </body>
 </html>
