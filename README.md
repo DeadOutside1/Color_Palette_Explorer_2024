@@ -1,6 +1,7 @@
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 <h1>Color Palette Explorer</h1>
 <br>
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
 
 <br>
 <h2>Инструкции по настройке</h2>
