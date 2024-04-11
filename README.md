@@ -1,9 +1,7 @@
-![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
-
 <h1>Color Palette Explorer</h1>
-<br>
 
-<br>
+![Amirkan](https://github.com/DeadOutside1/Color_Palette_Explorer_2024/assets/116104264/298c8be9-e3b0-4bcf-96f1-bb37a2d7e2c4)
+
 <h2>Инструкции по настройке</h2>
 <h4>1)Клонировать репозиторий</h4>
 
