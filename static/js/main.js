@@ -9,7 +9,7 @@ let sliderInputs = document.querySelectorAll('input[type="range"]')
 let colorHexes = document.querySelectorAll('.color h2');
 let copyContainer = document.querySelector(".copy-container");
 let colorArray = [];
-/*functions*/
+
 
 /*generating color*/
 function generateHex() {
@@ -19,10 +19,6 @@ function generateHex() {
         hash += hexLetters[Math.floor(Math.random()*16)];
     }
     return hash;
-
-    /*chroma library*/
-    // let hash = chroma.random();
-    // return hash;
 }
 
 /*text and bg contrast -luminance*/
@@ -45,8 +41,6 @@ function randomColor() {
             return;
         }
         else colorArray.push(chroma(generatedHex).hex());
-        //console.log(color.children); -HTML collection color.childNode: nodelist w/ text and in between elements
-
         /*setting up color*/
         hexText.innerHTML = generatedHex;
         div.style.backgroundColor = generatedHex;

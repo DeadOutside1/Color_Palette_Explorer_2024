@@ -20,9 +20,9 @@ def index():
 def about():
     return render_template("about.html")
 
-@app.route('/user/<string:name>/<int:id>')
-def user(name, id):
-    return "User page" + name + "-" + str(id)
+@app.route('/dashboard')
+def library():
+    return render_template('library.html')
 
 if __name__ == "__main__":
     app.run(debug=True)
