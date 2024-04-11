@@ -148,3 +148,79 @@ function resetSlider() {
     })
 }
 
+/*copy hex color*/
+function copyHexColor(hex){
+    /*setting value to temp div*/
+    let tempDiv = document.createElement('textarea');
+    tempDiv.value = hex.innerText;
+    document.body.appendChild(tempDiv);
+
+    /*execute copy func*/
+    tempDiv.select();
+    document.execCommand("copy");
+    document.body.removeChild(tempDiv);
+
+    /*open success message*/
+    copyContainer.classList.add("active");
+    //to pop up
+    let popUp = copyContainer.children[0]
+    popUp.classList.add("active");
+}
+
+function lockColor(index,e) {
+    colorDivs[index].classList.toggle("locked");
+    if(colorDivs[index].classList.contains("locked")) e.target.innerHTML = '<i class="fas fa-lock"></i>';
+    else e.target.innerHTML = '<i class="fas fa-lock-open"></i>';
+}
+
+/*Event Listeners*/
+document.addEventListener("DOMContentLoaded",randomColor);
+generateBtn.addEventListener("click",randomColor);
+
+copyBtns.forEach((copy,index) => {
+    copy.addEventListener("click",()=> {
+        copyHexColor(colorHexes[index]);
+    });
+});
+adjustBtns.forEach((adjust,index) => {
+    adjust.addEventListener("click",() => {
+        toggleSlider(index);
+    });
+})
+
+closeBtns.forEach((close,index) => {
+    close.addEventListener("click",() => {
+        closeSlider(index);
+    })
+})
+
+sliderInputs.forEach((slider) => {
+    slider.addEventListener("input",updateBackground);
+})
+
+colorDivs.forEach((div,index) => {
+    div.addEventListener("change",()=>{
+        updateTextUI(index);
+    });
+})
+
+colorHexes.forEach(hex => {
+    hex.addEventListener("click", ()=>{
+        copyHexColor(hex);
+    })
+})
+
+/*close popup*/
+copyContainer.addEventListener("transitionend", () => {
+    /*close success message*/
+    copyContainer.classList.remove("active");
+    //to pop up
+    let popUp = copyContainer.children[0];
+    popUp.classList.remove("active");
+})
+
+lockBtns.forEach((lock,index) => {
+    lock.addEventListener("click", (e) => {
+        lockColor(index,e);
+    })
+})
