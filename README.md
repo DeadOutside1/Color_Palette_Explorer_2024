@@ -1,6 +1,7 @@
 <h1>Color Palette Explorer</h1>
 <br>
-![Amirkan](https://github.com/DeadOutside1/Color_Palette_Explorer_2024/assets/116104264/298c8be9-e3b0-4bcf-96f1-bb37a2d7e2c4)
+![Alt Text](https://media.giphy.com/media/vFKqnCdLPNOKc/giphy.gif)
+
 <br>
 <h2>Инструкции по настройке</h2>
 <h4>1)Клонировать репозиторий</h4>
@@ -15,6 +16,9 @@
 - pip install flask-sqlalchemy
 
 <h4>4) Запустить app.py на Pycharm.</h4> 
+Нажмите правой кнопкой мыши на файле app.py.
+Выберите "Run 'app'" для запуска приложения.
+Приложение будет запущено, и вы увидите сообщение о том, что сервер Flask запущен на адресе http://127.0.0.1:5000/.
 
 <h2>Функционал</h2>
 
