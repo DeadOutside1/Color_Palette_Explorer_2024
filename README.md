@@ -12,7 +12,9 @@
 
 - pip install flask
 
-- pip install flask-sqlalchemy
+- pip install flask-sqlalchemy  
+
+- pip install flask_login
 
 <h4>4) Запустить app.py на Pycharm.</h4> 
 Нажмите правой кнопкой мыши на файле app.py.
